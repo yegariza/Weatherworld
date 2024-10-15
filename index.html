@@ -4,33 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <style>
-        /* Inline CSS */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            text-align: center;
-            padding: 20px;
-        }
-        #weather-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-        }
-        #weather-icon {
-            width: 100px;
-            margin: 10px 0;
-        }
-        #temp-div {
-            font-size: 2em;
-            margin: 10px 0;
-        }
-        #weather-info, #hourly-forecast {
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div id="weather-container">
@@ -38,7 +12,7 @@
         <input type="text" id="city" placeholder="Enter city">
         <button onclick="getWeather()">Search</button>
 
-        <img id="weather-icon" alt="Weather Icon">
+        <img id="weather-icon" alt="Weather Icon" style="display: none;"> <!-- Initially hidden -->
 
         <div id="temp-div"></div>
 
@@ -47,19 +21,6 @@
         <div id="hourly-forecast"></div>
     </div>
 
-    <script>
-        // Sample JavaScript to test functionality
-        function getWeather() {
-            const city = document.getElementById('city').value;
-            if (city) {
-                document.getElementById('temp-div').innerText = `Temperature in ${city}: 25°C`;
-                document.getElementById('weather-info').innerText = `Sunny`;
-                document.getElementById('weather-icon').src = "https://openweathermap.org/img/wn/01d@2x.png";
-                document.getElementById('hourly-forecast').innerText = "Hourly forecast: 24°C, 23°C, 22°C...";
-            } else {
-                alert('Please enter a city name');
-            }
-        }
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
